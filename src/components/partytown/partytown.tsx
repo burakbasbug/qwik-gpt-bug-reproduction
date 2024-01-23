@@ -23,14 +23,14 @@ export const QwikPartytown = (props: PartytownProps): any => {
         logScriptExecution: true,
         logMainAccess: true,
         debug: true,
-        forward: ['googletag.cmd.push'],
-        resolveUrl: (url: URL, location: URL, type: string) => {
-            if ((type === 'script' || type === 'xhr')) {
-                const proxyUrl = new URL('/proxy', location.origin);
-                proxyUrl.searchParams.append('url', encodeURI(url.href));
+        forward: ['dataLayer.push'],
+        resolveUrl: (url: URL, location: URL) => {
+            if (url.host !== location.host) {
+                // const proxyUrl = new URL('/proxy', location.origin);
+                const proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+                proxyUrl.searchParams.append('url', url.href);
                 return proxyUrl;
             }
-            return url;
         },
         ...props,
     } as PartytownProps;
