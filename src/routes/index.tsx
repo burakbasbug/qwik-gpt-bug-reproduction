@@ -99,6 +99,36 @@ export default component$(() => {
       </div>
 
       <div class="ad-container">
+        <h1>nau_mag_front_mid_3</h1>
+
+        <div
+          id="banner-ad-4"
+          style="width: 970px; height: 250px; border: 1px solid black;"
+        ></div>
+
+        <script
+          type="text/partytown"
+          dangerouslySetInnerHTML={`
+            googletag.cmd.push(() => {
+
+                const slot = googletag.defineSlot("/21728735909/nau_mag/nau_mag_front/nau_mag_front_mid_3", [[970,90],[970,250],[728,90],[994,118],[994,250]], "banner-ad-4");
+                slot.addService(googletag.pubads());
+
+                const targeting2 = {"section":["front"],"magazine":["health"],"showcase":["staging-mag"]};
+                Object.keys(targeting2).forEach(key => {
+                    if(targeting2[key].length > 0){
+                        slot.setTargeting(key, targeting2[key]);
+                    }
+                });
+
+                googletag.enableServices();
+                googletag.display("banner-ad-4");
+            });
+          `}
+        />
+      </div>
+
+      <div class="ad-container">
         <h1>nau_mag_front_left</h1>
         <div
           style="width: 300px; height: 600px; border: 1px solid black;"
