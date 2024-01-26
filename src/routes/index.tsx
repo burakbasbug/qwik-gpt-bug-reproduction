@@ -21,7 +21,7 @@ export default component$(() => {
             const slot = googletag.defineSlot("/21728735909/nau_mag/nau_mag_front/nau_mag_front_top", [[970,90],[970,250],[728,90],[994,118],[994,250]], "banner-ad-1");
             slot.addService(googletag.pubads());
 
-            const targeting2 = {"section":["front"],"magazine":["test"]};
+            const targeting2 = {"section":["front"],"magazine":["test"],"showcase":["staging-mag"]};
             Object.keys(targeting2).forEach(key => {
                 if(targeting2[key].length > 0){
                     slot.setTargeting(key, targeting2[key]);
@@ -53,7 +53,7 @@ export default component$(() => {
             const slot = googletag.defineSlot("/21728735909/nau_mag/nau_mag_front/nau_mag_front_mid_1", [[970,90],[970,250],[728,90],[994,118],[994,250]], "banner-ad-2");
             slot.addService(googletag.pubads());
 
-            const targeting2 = {"section":["front"],"magazine":["test"]};
+            const targeting2 = {"section":["front"],"magazine":["test"],"showcase":["staging-mag"]};
             Object.keys(targeting2).forEach(key => {
                 if(targeting2[key].length > 0){
                     slot.setTargeting(key, targeting2[key]);
@@ -143,7 +143,7 @@ export default component$(() => {
               const slot = googletag.defineSlot("/21728735909/nau_mag/nau_mag_front/nau_mag_front_left", [[300,250],[120,600],[160,600],[300,600]], "half-page-ad-left");
               slot.addService(googletag.pubads());
 
-              const targeting2 = {"section":["front"],"magazine":["test"]};
+              const targeting2 = {"section":["front"],"magazine":["test"],"showcase":["staging-mag"]};
               Object.keys(targeting2).forEach(key => {
                   if(targeting2[key].length > 0){
                       slot.setTargeting(key, targeting2[key]);
@@ -172,7 +172,7 @@ export default component$(() => {
               const slot = googletag.defineSlot("/21728735909/nau_mag/nau_mag_front/nau_mag_front_right", [[300,250],[120,600],[160,600],[300,600]], "half-page-ad-right");
               slot.addService(googletag.pubads());
 
-              const targeting2 = {"section":["front"],"magazine":["test"]};
+              const targeting2 = {"section":["front"],"magazine":["test"],"showcase":["staging-mag"]};
               Object.keys(targeting2).forEach(key => {
                   if(targeting2[key].length > 0){
                       slot.setTargeting(key, targeting2[key]);
