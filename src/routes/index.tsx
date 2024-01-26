@@ -13,7 +13,7 @@ export default component$(() => {
         ></div>
 
         <script
-          type="text/partytown"
+
           dangerouslySetInnerHTML={`
             
           googletag.cmd.push(() => {
@@ -45,7 +45,7 @@ export default component$(() => {
         ></div>
 
         <script
-          type="text/partytown"
+
           dangerouslySetInnerHTML={`
 
           googletag.cmd.push(() => {
@@ -77,7 +77,7 @@ export default component$(() => {
         ></div>
 
         <script
-          type="text/partytown"
+
           dangerouslySetInnerHTML={`
           googletag.cmd.push(() => {
 
@@ -107,7 +107,7 @@ export default component$(() => {
         ></div>
 
         <script
-          type="text/partytown"
+
           dangerouslySetInnerHTML={`
             googletag.cmd.push(() => {
 
@@ -136,7 +136,7 @@ export default component$(() => {
         ></div>
 
         <script
-          type="text/partytown"
+
           dangerouslySetInnerHTML={`
             googletag.cmd.push(() => {
 
@@ -165,7 +165,7 @@ export default component$(() => {
         ></div>
 
         <script
-          type="text/partytown"
+
           dangerouslySetInnerHTML={`
           googletag.cmd.push(() => {
 

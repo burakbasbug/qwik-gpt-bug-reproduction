@@ -4,8 +4,8 @@ import {
   RouterOutlet,
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
 import { QwikPartytown } from './components/partytown/partytown';
+import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
@@ -23,16 +23,16 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <QwikPartytown />
         <link rel="manifest" href="/manifest.json" />
-        <script type="text/partytown" async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />  
+        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />
         <script
-            type="text/partytown"
-            dangerouslySetInnerHTML={`
+
+          dangerouslySetInnerHTML={`
             window.googletag = window.googletag || { cmd: [] };
             `}
         />
         <RouterHead />
       </head>
-      <body lang="en" style="display: flex; justify-content: center; align-items: center; padding: 200px 100px; flex-direction: column;">        
+      <body lang="en" style="display: flex; justify-content: center; align-items: center; padding: 200px 100px; flex-direction: column;">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
