@@ -1,7 +1,10 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useContext } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { ScriptTypeContext } from '~/root';
 
 export default component$(() => {
+  const scriptType = useContext(ScriptTypeContext);
+
   return (
     <>
       <div class="ad-container">
@@ -13,9 +16,8 @@ export default component$(() => {
         ></div>
 
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
-            
           googletag.cmd.push(() => {
 
             const slot = googletag.defineSlot("/21728735909/nau_mag/nau_mag_front/nau_mag_front_top", [[970,90],[970,250],[728,90],[994,118],[994,250]], "banner-ad-1");
@@ -45,7 +47,7 @@ export default component$(() => {
         ></div>
 
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
 
           googletag.cmd.push(() => {
@@ -77,7 +79,7 @@ export default component$(() => {
         ></div>
 
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
           googletag.cmd.push(() => {
 
@@ -107,7 +109,7 @@ export default component$(() => {
         ></div>
 
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
             googletag.cmd.push(() => {
 
@@ -136,7 +138,7 @@ export default component$(() => {
         ></div>
 
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
             googletag.cmd.push(() => {
 
@@ -165,7 +167,7 @@ export default component$(() => {
         ></div>
 
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
           googletag.cmd.push(() => {
 

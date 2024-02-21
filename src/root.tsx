@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, createContextId, useContextProvider, useStore } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -9,13 +9,15 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
+type ScriptType = {type: "text/partytown" | "text/javascript" };
+export const ScriptTypeContext = createContextId<ScriptType>('script-type-context');
+
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Don't remove the `<head>` and `<body>` elements.
-   */
+  const scriptType = useStore<ScriptType>({
+    // type: "text/partytown",
+    type: "text/javascript",
+  });
+  useContextProvider(ScriptTypeContext, scriptType);
 
   return (
     <QwikCityProvider>
@@ -23,9 +25,12 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <QwikPartytown />
         <link rel="manifest" href="/manifest.json" />
-        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />
+        <script 
+          {...scriptType}
+          async
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />
         <script
-
+          {...scriptType}
           dangerouslySetInnerHTML={`
             window.googletag = window.googletag || { cmd: [] };
             `}
