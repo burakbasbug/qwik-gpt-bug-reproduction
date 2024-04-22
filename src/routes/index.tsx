@@ -4,6 +4,25 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 export default component$(() => {
   return (
     <>
+			<div class='ad-container'>
+				<h1 style='width: 300px; text-align: center'>Google Example</h1>
+
+				<div id='banner-ad-google' style='width: 300px; height: 250px'></div>
+
+				<script
+					type='text/partytown'
+					dangerouslySetInnerHTML={`            
+						googletag.cmd.push(() => {
+							googletag
+								.defineSlot("/6355419/Travel/Europe/France/Paris", [300, 250], "banner-ad-google")
+								.addService(googletag.pubads());
+					
+							googletag.enableServices();
+							googletag.display("banner-ad-google");
+						});
+					`}
+				/>
+			</div>
       <div class="ad-container">
         <h1>nau_mag_front_top</h1>
 
