@@ -4,7 +4,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 export default component$(() => {
   return (
     <>
-      <div class="ad-container">
+      {/* <div class="ad-container">
         <h1>nau_mag_front_top</h1>
 
         <div
@@ -34,10 +34,10 @@ export default component$(() => {
     
           `}
         />
-      </div>
+      </div> */}
 
       <div class="ad-container">
-        <h1>nau_mag_front_mid_1</h1>
+        <h1>nau_mag_front_mid_1 (Safe Frame Enabled)</h1>
 
         <div
           id="banner-ad-2"
@@ -66,10 +66,10 @@ export default component$(() => {
     
           `}
         />
-      </div>
+      </div> 
 
       <div class="ad-container">
-        <h1>nau_mag_front_mid_2</h1>
+        <h1>nau_mag_front_mid_2 (Safe Frame Disabled)</h1>
 
         <div
           id="banner-ad-3"
@@ -97,7 +97,7 @@ export default component$(() => {
       `}
         />
       </div>
-
+{/* 
       <div class="ad-container">
         <h1>nau_mag_front_mid_3</h1>
 
@@ -184,7 +184,7 @@ export default component$(() => {
           });
       `}
         />
-      </div>
+      </div> */}
     </>
   );
 });
