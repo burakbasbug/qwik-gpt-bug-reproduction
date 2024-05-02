@@ -26,8 +26,8 @@ export const QwikPartytown = (props: PartytownProps): any => {
         forward: ['dataLayer.push'],
         resolveUrl: (url: URL, location: URL) => {
             if (url.host !== location.host) {
-                // const proxyUrl = new URL('/proxy', location.origin);
-                const proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+                // const proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+                const proxyUrl = new URL('/proxy', location.origin);
                 proxyUrl.searchParams.append('url', url.href);
                 return proxyUrl;
             }

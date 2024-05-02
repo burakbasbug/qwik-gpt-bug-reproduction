@@ -6,12 +6,14 @@ export const onGet: RequestHandler = async ({ send, url, headers, request }) => 
 
         const response = await fetch(decodeURI(urlParam), {
             credentials: 'include',
-            headers: {
-                ...request.headers,
-            },
+            headers: request.headers,
         });
 
         response.headers.forEach((value: string, key: string) => {
+            if(['content-length'].includes(key)) {
+                return;
+            }
+
             if (key === 'set-cookie') {
                 const entries = value.split('; ');
                 const newEntries = entries.map(entry => {
@@ -28,7 +30,9 @@ export const onGet: RequestHandler = async ({ send, url, headers, request }) => 
             }
         });
 
-        send(response.status, await response.text());
+        const content = await response.text();
+
+        send(response.status, content);
     } catch (e) {
         console.error(e);
     }
