@@ -4,6 +4,15 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 export default component$(() => {
   return (
     <>
+            <script 
+        type="text/partytown"
+         async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />  
+        <script
+            type="text/partytown"
+            dangerouslySetInnerHTML={`
+            window.googletag = window.googletag || { cmd: [] };
+            `}
+        />
       {/* <div class="ad-container">
         <h1>nau_mag_front_top</h1>
 
@@ -59,7 +68,6 @@ export default component$(() => {
                     slot.setTargeting(key, targeting2[key]);
                 }
             });
-
             googletag.enableServices();
             googletag.display("banner-ad-2");
         });
@@ -68,7 +76,7 @@ export default component$(() => {
         />
       </div> 
 
-      <div class="ad-container">
+      {/* <div class="ad-container">
         <h1>nau_mag_front_mid_2 (Safe Frame Disabled)</h1>
 
         <div
@@ -96,7 +104,7 @@ export default component$(() => {
           });
       `}
         />
-      </div>
+      </div> */}
 {/* 
       <div class="ad-container">
         <h1>nau_mag_front_mid_3</h1>

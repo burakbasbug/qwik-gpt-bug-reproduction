@@ -30,7 +30,9 @@ export const onGet: RequestHandler = async ({ send, url, headers, request }) => 
             }
         });
 
-        const content = await response.text();
+        let content = await response.text();
+
+        content = content.replaceAll("(window.name)", "(window.name) console.log(window.name);")
 
         send(response.status, content);
     } catch (e) {
