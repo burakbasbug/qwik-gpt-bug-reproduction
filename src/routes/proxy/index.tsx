@@ -30,8 +30,17 @@ export const onGet: RequestHandler = async ({ send, url, headers, request }) => 
             }
         });
 
-        const content = await response.text();
+        let content = await response.text();
 
+
+        const proxyUrl = new URL(urlParam);
+        if(/^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.safeframe\.googlesyndication\.com|tpc\.googlesyndication\.com|secureframe\.doubleclick\.net|[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.safeframe\.usercontent\.goog)$/.test(proxyUrl.hostname) && proxyUrl.pathname === '/safeframe/1-0-40/html/container.html') {
+            content = content.replaceAll(
+                "/^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.safeframe\\.googlesyndication\\.com|tpc\\.googlesyndication\\.com|secureframe\\.doubleclick\\.net|[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.safeframe\\.usercontent\\.goog)$/",
+                "/^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.safeframe\\.googlesyndication\\.com|tpc\\.googlesyndication\\.com|secureframe\\.doubleclick\\.net|[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.safeframe\\.usercontent\\.goog|localhost)$/",
+            ); 
+        }
+        
         send(response.status, content);
     } catch (e) {
         console.error(e);

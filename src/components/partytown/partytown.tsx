@@ -23,10 +23,10 @@ export const QwikPartytown = (props: PartytownProps): any => {
         logScriptExecution: true,
         logMainAccess: true,
         debug: true,
-        forward: ['dataLayer.push'],
+        forward: [],
+        mainWindowAccessors: ['name', 'hostname'],
         resolveUrl: (url: URL, location: URL) => {
             if (url.host !== location.host) {
-                // const proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
                 const proxyUrl = new URL('/proxy', location.origin);
                 proxyUrl.searchParams.append('url', url.href);
                 return proxyUrl;
